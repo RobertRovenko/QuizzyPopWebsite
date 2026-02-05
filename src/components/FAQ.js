@@ -16,213 +16,218 @@ function FAQ() {
   const searchInputRef = useRef(null);
 
   // FAQ items
-  const faqItems = [
-    {
-      question: "What is QuizzyPop?",
-      answer: (
-        <>
-          <div className="game-description">
-            <h4>🎮 QuizzyPop - Time-Based True or False Quiz Game 🎮</h4>
-            <p>
-              <strong>QuizzyPop</strong> is a fast-paced time-based true or
-              false game where you have 7 seconds to answer each statement. Each
-              quiz consists of 10 questions across various categories.
-            </p>
+  // Replace lines 19-187 (the faqItems array) with:
+  const faqItems = useMemo(
+    () => [
+      {
+        question: "What is QuizzyPop?",
+        answer: (
+          <>
+            <div className="game-description">
+              <h4>🎮 QuizzyPop - Time-Based True or False Quiz Game 🎮</h4>
+              <p>
+                <strong>QuizzyPop</strong> is a fast-paced time-based true or
+                false game where you have 7 seconds to answer each statement.
+                Each quiz consists of 10 questions across various categories.
+              </p>
 
-            <div className="game-features-grid">
-              <div className="feature-item">
-                <span>
-                  <strong>Free Categories:</strong> Start with "Random" and
-                  "Hard Quiz"
-                </span>
-              </div>
-              <div className="feature-item">
-                <span>
-                  <strong>Unlock More:</strong> Unlock General Knowledge, Food,
-                  Music, Gaming, History for 25 gems each
-                </span>
-              </div>
-              <div className="feature-item">
-                <span>
-                  <strong>Daily Quiz:</strong> Ranked daily competition for
-                  leaderboard points
-                </span>
+              <div className="game-features-grid">
+                <div className="feature-item">
+                  <span>
+                    <strong>Free Categories:</strong> Start with "Random" and
+                    "Hard Quiz"
+                  </span>
+                </div>
+                <div className="feature-item">
+                  <span>
+                    <strong>Unlock More:</strong> Unlock General Knowledge,
+                    Food, Music, Gaming, History for 25 gems each
+                  </span>
+                </div>
+                <div className="feature-item">
+                  <span>
+                    <strong>Daily Quiz:</strong> Ranked daily competition for
+                    leaderboard points
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-        </>
-      ),
-    },
-    {
-      question: "How do powerups work?",
-      answer: (
-        <>
-          <p>QuizzyPop features 5 powerups to enhance your gameplay:</p>
-          <ul className="powerup-list">
-            <li>
-              <strong>⏸️ Freeze Time (Free):</strong> Freezes timer for 3
-              seconds on current question
-            </li>
-            <li>
-              <strong>🎯 Answer Cheat:</strong> Automatically selects correct
-              answer (costs gems)
-            </li>
-            <li>
-              <strong>🔥 Phoenix (3 gems):</strong> Automatically corrects wrong
-              answers or timeouts
-            </li>
-            <li>
-              <strong>⚡ Double Points (7 gems):</strong> Gives 2x XP for the
-              entire quiz
-            </li>
-            <li>
-              <strong>⏱️ Extra Time (7 gems):</strong> Gives 10 seconds per
-              question instead of 7
-            </li>
-          </ul>
-          <p className="tip">
-            💡 Pro Tip: Use powerups strategically in ranked matches!
-          </p>
-        </>
-      ),
-    },
-    {
-      question: "How do I earn gems?",
-      answer: (
-        <>
-          <p>Gems can be earned through multiple ways:</p>
-          <ul className="powerup-list">
-            <li>
-              <strong>⭐ Leveling Up:</strong> Earn gems as you level up
-            </li>
-            <li>
-              <strong>📅 Daily Quiz:</strong> Play the daily ranked quiz
-            </li>
-            <li>
-              <strong>🏆 Leaderboard:</strong> Get rank 1, 2, or 3 on the ladder
-            </li>
-            <li>
-              <strong>🛒 IAP Bundles:</strong> Purchase gems through in-app
-              purchases
-            </li>
-            <li>
-              <strong>🎯 Achievements:</strong> Complete achievements for bonus
-              gems
-            </li>
-          </ul>
-          <p>Use gems to unlock new categories or activate powerups!</p>
-        </>
-      ),
-    },
-    {
-      question: "What quiz categories are available?",
-      answer:
-        "Start with 'Random' and 'Hard Quiz' for free. Unlock additional categories (General Knowledge, Food, Music, Gaming, History) for 25 gems each. Each unlocked category gives unlimited access. More categories coming soon!",
-    },
-    {
-      question: "Do I need to create an account to play?",
-      answer:
-        "No! You can play as Guest without registration. Guest mode saves progress locally on your device. Create an account for cross-device access and personalized username on leaderboards.",
-    },
-    {
-      question: "What's the difference between Guest and Account?",
-      answer: (
-        <>
-          <div className="comparison-grid">
-            <div className="comparison-col">
-              <h5>Guest Account</h5>
-              <ul className="powerup-list">
-                <li>🎮 Play immediately, no registration</li>
-                <li>📱 Progress saved locally only</li>
-                <li>👤 Appear anonymously on leaderboards</li>
-                <li>💾 Data stored on device only</li>
-              </ul>
+          </>
+        ),
+      },
+      {
+        question: "How do powerups work?",
+        answer: (
+          <>
+            <p>QuizzyPop features 5 powerups to enhance your gameplay:</p>
+            <ul className="powerup-list">
+              <li>
+                <strong>⏸️ Freeze Time (Free):</strong> Freezes timer for 3
+                seconds on current question
+              </li>
+              <li>
+                <strong>🎯 Answer Cheat:</strong> Automatically selects correct
+                answer (costs gems)
+              </li>
+              <li>
+                <strong>🔥 Phoenix (3 gems):</strong> Automatically corrects
+                wrong answers or timeouts
+              </li>
+              <li>
+                <strong>⚡ Double Points (7 gems):</strong> Gives 2x XP for the
+                entire quiz
+              </li>
+              <li>
+                <strong>⏱️ Extra Time (7 gems):</strong> Gives 10 seconds per
+                question instead of 7
+              </li>
+            </ul>
+            <p className="tip">
+              💡 Pro Tip: Use powerups strategically in ranked matches!
+            </p>
+          </>
+        ),
+      },
+      {
+        question: "How do I earn gems?",
+        answer: (
+          <>
+            <p>Gems can be earned through multiple ways:</p>
+            <ul className="powerup-list">
+              <li>
+                <strong>⭐ Leveling Up:</strong> Earn gems as you level up
+              </li>
+              <li>
+                <strong>📅 Daily Quiz:</strong> Play the daily ranked quiz
+              </li>
+              <li>
+                <strong>🏆 Leaderboard:</strong> Get rank 1, 2, or 3 on the
+                ladder
+              </li>
+              <li>
+                <strong>🛒 IAP Bundles:</strong> Purchase gems through in-app
+                purchases
+              </li>
+              <li>
+                <strong>🎯 Achievements:</strong> Complete achievements for
+                bonus gems
+              </li>
+            </ul>
+            <p>Use gems to unlock new categories or activate powerups!</p>
+          </>
+        ),
+      },
+      {
+        question: "What quiz categories are available?",
+        answer:
+          "Start with 'Random' and 'Hard Quiz' for free. Unlock additional categories (General Knowledge, Food, Music, Gaming, History) for 25 gems each. Each unlocked category gives unlimited access. More categories coming soon!",
+      },
+      {
+        question: "Do I need to create an account to play?",
+        answer:
+          "No! You can play as Guest without registration. Guest mode saves progress locally on your device. Create an account for cross-device access and personalized username on leaderboards.",
+      },
+      {
+        question: "What's the difference between Guest and Account?",
+        answer: (
+          <>
+            <div className="comparison-grid">
+              <div className="comparison-col">
+                <h5>Guest Account</h5>
+                <ul className="powerup-list">
+                  <li>🎮 Play immediately, no registration</li>
+                  <li>📱 Progress saved locally only</li>
+                  <li>👤 Appear anonymously on leaderboards</li>
+                  <li>💾 Data stored on device only</li>
+                </ul>
+              </div>
+              <div className="comparison-col">
+                <h5>Full Account</h5>
+                <ul className="powerup-list">
+                  <li>🔄 Cross-device progress sync</li>
+                  <li>✨ Personalized username</li>
+                  <li>☁️ Cloud backup of progress</li>
+                  <li>🔒 Recoverable if device lost</li>
+                </ul>
+              </div>
             </div>
-            <div className="comparison-col">
-              <h5>Full Account</h5>
-              <ul className="powerup-list">
-                <li>🔄 Cross-device progress sync</li>
-                <li>✨ Personalized username</li>
-                <li>☁️ Cloud backup of progress</li>
-                <li>🔒 Recoverable if device lost</li>
-              </ul>
-            </div>
-          </div>
-          <p className="privacy-note">
-            See our Privacy Policy for full details.
-          </p>
-        </>
-      ),
-    },
-    {
-      question: "How do leaderboards work?",
-      answer:
-        "Compete in daily and all-time leaderboards. Earn points from playing the daily quiz (once per day). The ranked 'daily quiz' mode contributes to your ladder position. Top 3 ranks earn gem rewards. Your best score each day counts!",
-    },
-    {
-      question: "What are achievements?",
-      answer:
-        "Earn achievements for level badges, answering fast (under 3 seconds), getting perfect scores, using powerups, and advancing in the game. Track your progress in the profile section. Complete achievements for bonus gems and XP!",
-    },
-    {
-      question: "What stats are shown after a quiz?",
-      answer:
-        "After each quiz, view detailed stats including: correct/incorrect answers, time taken, timeouts, average answer time, accuracy percentage, XP earned, and gems collected (if any).",
-    },
-    {
-      question: "Can I customize game settings?",
-      answer:
-        "Yes! Enable/disable vibration, sound effects, and background music in Settings. Adjust these anytime to suit your preference. Settings are saved automatically.",
-    },
-    {
-      question: "How often are new questions added?",
-      answer:
-        "New questions are added regularly throughout the year. We continuously update all categories to keep the game fresh and challenging.",
-    },
-    {
-      question: "Is QuizzyPop free to play?",
-      answer:
-        "Yes! All core gameplay is completely free. Optional in-app purchases are available for gems and cosmetic items, but never required to enjoy the full game. No pay-to-win mechanics!",
-    },
-    {
-      question: "Can I play offline?",
-      answer:
-        "Yes! All quizzes are downloaded to your device. Play offline anytime. For account users, progress syncs automatically when you're back online.",
-    },
-    {
-      question: "How do I recover progress if I lose my device?",
-      answer: (
-        <>
-          <p>
-            <strong>Guest Mode:</strong> Progress cannot be recovered as it's
-            stored locally only.
-          </p>
-          <p>
-            <strong>Account Mode:</strong> Simply log in on a new device to
-            restore all progress from the cloud.
-          </p>
-          <p className="tip">
-            💡 Tip: We recommend creating an account to protect your progress!
-          </p>
-        </>
-      ),
-    },
-    {
-      question: "How do I delete my account or data?",
-      answer:
-        "You can delete your account in the Settings menu. Guest users can clear app data or uninstall the app.",
-    },
-    {
-      question: "Is QuizzyPop suitable for children?",
-      answer:
-        "Yes! QuizzyPop is family-friendly with no inappropriate content. Guest mode is ideal for kids as it requires no personal information. We comply with COPPA regulations.",
-    },
-    {
-      question: "I found a bug or have suggestions",
-      answer:
-        "Email us at dev@robertrovenko.com. We appreciate all feedback and read every message to improve QuizzyPop! Bug reports with screenshots are especially helpful.",
-    },
-  ];
+            <p className="privacy-note">
+              See our Privacy Policy for full details.
+            </p>
+          </>
+        ),
+      },
+      {
+        question: "How do leaderboards work?",
+        answer:
+          "Compete in daily and all-time leaderboards. Earn points from playing the daily quiz (once per day). The ranked 'daily quiz' mode contributes to your ladder position. Top 3 ranks earn gem rewards. Your best score each day counts!",
+      },
+      {
+        question: "What are achievements?",
+        answer:
+          "Earn achievements for level badges, answering fast (under 3 seconds), getting perfect scores, using powerups, and advancing in the game. Track your progress in the profile section. Complete achievements for bonus gems and XP!",
+      },
+      {
+        question: "What stats are shown after a quiz?",
+        answer:
+          "After each quiz, view detailed stats including: correct/incorrect answers, time taken, timeouts, average answer time, accuracy percentage, XP earned, and gems collected (if any).",
+      },
+      {
+        question: "Can I customize game settings?",
+        answer:
+          "Yes! Enable/disable vibration, sound effects, and background music in Settings. Adjust these anytime to suit your preference. Settings are saved automatically.",
+      },
+      {
+        question: "How often are new questions added?",
+        answer:
+          "New questions are added regularly throughout the year. We continuously update all categories to keep the game fresh and challenging.",
+      },
+      {
+        question: "Is QuizzyPop free to play?",
+        answer:
+          "Yes! All core gameplay is completely free. Optional in-app purchases are available for gems and cosmetic items, but never required to enjoy the full game. No pay-to-win mechanics!",
+      },
+      {
+        question: "Can I play offline?",
+        answer:
+          "Yes! All quizzes are downloaded to your device. Play offline anytime. For account users, progress syncs automatically when you're back online.",
+      },
+      {
+        question: "How do I recover progress if I lose my device?",
+        answer: (
+          <>
+            <p>
+              <strong>Guest Mode:</strong> Progress cannot be recovered as it's
+              stored locally only.
+            </p>
+            <p>
+              <strong>Account Mode:</strong> Simply log in on a new device to
+              restore all progress from the cloud.
+            </p>
+            <p className="tip">
+              💡 Tip: We recommend creating an account to protect your progress!
+            </p>
+          </>
+        ),
+      },
+      {
+        question: "How do I delete my account or data?",
+        answer:
+          "You can delete your account in the Settings menu. Guest users can clear app data or uninstall the app.",
+      },
+      {
+        question: "Is QuizzyPop suitable for children?",
+        answer:
+          "Yes! QuizzyPop is family-friendly with no inappropriate content. Guest mode is ideal for kids as it requires no personal information. We comply with COPPA regulations.",
+      },
+      {
+        question: "I found a bug or have suggestions",
+        answer:
+          "Email us at dev@robertrovenko.com. We appreciate all feedback and read every message to improve QuizzyPop! Bug reports with screenshots are especially helpful.",
+      },
+    ],
+    [],
+  ); // Empty dependency array means it only creates once
 
   // Create filtered items with their correct original indices
   const filteredItems = useMemo(() => {
@@ -246,8 +251,7 @@ function FAQ() {
         originalIndex: originalIndex,
       };
     });
-  }, [searchTerm]);
-
+  }, [searchTerm, faqItems]); // ADD faqItems here
   // Handle search with debouncing
   const handleSearch = useCallback(
     (e) => {

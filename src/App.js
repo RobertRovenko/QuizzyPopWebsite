@@ -16,6 +16,8 @@ import TermsOfService from "./components/TermsOfService";
 import CookiePolicy from "./components/CookiePolicy";
 import FAQ from "./components/FAQ";
 import Pricing from "./components/Pricing";
+import DeleteAccount from "./components/DeleteAccount";
+
 function App() {
   return (
     <Router>
@@ -88,6 +90,16 @@ function App() {
               <>
                 <Header />
                 <Pricing />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/delete-account"
+            element={
+              <>
+                <Header />
+                <DeleteAccount />
                 <Footer />
               </>
             }

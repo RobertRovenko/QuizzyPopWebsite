@@ -104,6 +104,9 @@ function Footer() {
               <li>
                 <a href="/contact">Contact Us</a>
               </li>
+              <li>
+                <a href="/delete-account">Delete Account</a>
+              </li>
             </ul>
           </div>
 

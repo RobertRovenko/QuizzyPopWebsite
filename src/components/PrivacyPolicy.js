@@ -1,6 +1,5 @@
 // src/components/PrivacyPolicy.js
 import "./PrivacyPolicy.css";
-import { Link } from "react-router-dom";
 import React, { useEffect, useRef } from "react";
 
 function PrivacyPolicy() {
