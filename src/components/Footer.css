@@ -1,0 +1,410 @@
+/* src/components/Footer.css */
+.footer {
+  background: #000d18;
+  color: #ffffff;
+  padding: 60px 0 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* Top Section */
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 50px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-logo {
+  margin-bottom: 10px;
+}
+
+.footer-logo-text {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: "Fredoka", "Segoe UI", "Arial Black", sans-serif;
+
+  background: #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-tagline {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-size: 1.1rem;
+  max-width: 300px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  color: #00cc8e;
+}
+
+/* Links Sections */
+.footer-links h3,
+.footer-newsletter h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-family: "Fredoka", "Segoe UI", sans-serif;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+}
+
+.footer-links a:hover {
+  color: #00cc8e;
+  transform: translateX(5px);
+}
+
+/* Newsletter */
+.footer-newsletter p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletter-form input {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.newsletter-form input:focus {
+  outline: none;
+  border-color: #00cc8e;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.newsletter-form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.newsletter-form button {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #00aaff, #0088cc);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Fredoka", "Segoe UI", sans-serif;
+}
+
+.newsletter-form button:hover {
+  background: linear-gradient(135deg, #00bbff, #0099dd);
+  transform: translateY(-2px);
+}
+
+/* Middle Section: App Download */
+.footer-middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.download-badges {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.download-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+}
+
+.play-badge:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* App Store Badge - Coming Soon */
+.app-badge {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.app-badge .badge-icon {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.app-badge .badge-text {
+  opacity: 0.7;
+}
+
+.coming-soon-label {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff6b6b;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.badge-icon {
+  font-size: 2.5rem;
+  color: #00cc8e;
+}
+
+.app-badge .badge-icon {
+  color: #ffffff;
+}
+
+.badge-text {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.badge-label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.badge-store {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: "Fredoka", "Segoe UI", sans-serif;
+}
+
+.footer-dev-credit {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+
+.footer-dev-credit a {
+  color: #00cc8e;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.footer-dev-credit a:hover {
+  color: #00aaff;
+  text-decoration: underline;
+}
+
+/* Bottom Section: Copyright */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.footer-bottom-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-bottom-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+  color: #00cc8e;
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 0 20px;
+  }
+
+  .footer-container {
+    padding: 0 20px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .footer-logo-text {
+    font-size: 2rem;
+  }
+
+  .footer-tagline {
+    max-width: 100%;
+  }
+
+  .footer-middle {
+    margin-bottom: 30px;
+  }
+
+  .download-badges {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .download-badge {
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+  }
+
+  .badge-icon {
+    font-size: 2rem;
+  }
+
+  .badge-store {
+    font-size: 1.1rem;
+  }
+
+  .coming-soon-label {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-bottom-links {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logo-text {
+    font-size: 1.8rem;
+  }
+
+  .footer-social a {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .download-badge {
+    padding: 12px 20px;
+  }
+}

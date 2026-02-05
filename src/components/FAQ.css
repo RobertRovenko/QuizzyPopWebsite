@@ -1,0 +1,406 @@
+/* src/components/FAQ.css */
+.faq-page {
+  min-height: 100vh;
+  background: #001220;
+  color: #ffffff;
+}
+
+.faq-header-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 30px;
+  text-align: center;
+}
+
+.faq-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  background: #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: "Fredoka", "Segoe UI", sans-serif;
+}
+
+.faq-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.faq-search {
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1rem;
+  z-index: 1;
+}
+
+.faq-search input {
+  width: 100%;
+  padding: 15px 20px 15px 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  color: #ffffff;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.faq-search input:focus {
+  outline: none;
+  border-color: #00cc8e;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(0, 204, 142, 0.1);
+}
+
+.faq-search input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.clear-search {
+  position: absolute;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 5px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.clear-search:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.search-results-info {
+  text-align: center;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+/* Main Content */
+.faq-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 30px 60px;
+}
+
+.faq-content {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* FAQ List - Removed category section styles */
+.faq-list {
+  margin-bottom: 0;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.3s ease;
+}
+
+.faq-item.open {
+  background: rgba(0, 204, 142, 0.05);
+  border-color: rgba(0, 204, 142, 0.3);
+  box-shadow: 0 5px 20px rgba(0, 204, 142, 0.1);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 20px 25px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  font-family: "Fredoka", "Segoe UI", sans-serif;
+}
+
+.faq-question:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.faq-item.open .faq-question {
+  color: #00cc8e;
+}
+
+.question-text {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.question-number {
+  color: #00aaff;
+  font-size: 1rem;
+  min-width: 40px;
+}
+
+.question-icon {
+  color: #00cc8e;
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.open .question-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 2000px;
+}
+
+.answer-content {
+  padding: 0 25px 25px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* Game Description Styling */
+.game-description {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px 0;
+  border-left: 4px solid #00cc8e;
+}
+
+.game-description h4 {
+  color: #00cc8e;
+  margin-bottom: 15px;
+  font-family: "Fredoka", "Segoe UI", sans-serif;
+}
+
+.game-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Removed .feature-icon styles since we're not using icons anymore */
+
+/* Powerup list styling */
+.powerup-list {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.powerup-list li {
+  padding: 8px 0;
+  padding-left: 25px;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.powerup-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #00cc8e;
+  font-weight: bold;
+}
+
+.powerup-list li:last-child {
+  border-bottom: none;
+}
+
+/* Comparison grid */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 20px 0;
+}
+
+.comparison-col {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comparison-col h5 {
+  color: #00aaff;
+  margin-bottom: 15px;
+  font-family: "Fredoka", "Segoe UI", sans-serif;
+}
+
+/* Tips and notes */
+.tip {
+  background: rgba(0, 204, 142, 0.1);
+  border-left: 4px solid #00cc8e;
+  padding: 15px;
+  border-radius: 0 8px 8px 0;
+  margin: 15px 0;
+  font-style: italic;
+}
+
+.privacy-note {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* No Results */
+.no-results {
+  text-align: center;
+  padding: 50px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 15px;
+  border: 2px dashed rgba(255, 255, 255, 0.1);
+  margin-bottom: 30px;
+}
+
+.no-results h3 {
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.no-results p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 25px;
+}
+
+.no-results .action-btn {
+  background: linear-gradient(135deg, #00cc8e, #00aaff);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.no-results .action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 204, 142, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .faq-header {
+  }
+
+  .faq-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .faq-container {
+    padding: 30px 20px 40px;
+  }
+
+  .faq-content {
+    padding: 25px 20px;
+  }
+
+  .faq-question {
+    padding: 18px 20px;
+    font-size: 1.1rem;
+  }
+
+  .answer-content {
+    padding: 0 20px 20px;
+    font-size: 1rem;
+  }
+
+  .game-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .feature-item {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .faq-question {
+    padding: 15px 18px;
+    font-size: 1rem;
+  }
+
+  .question-number {
+    min-width: 30px;
+    font-size: 0.9rem;
+  }
+
+  .faq-search input {
+    padding-left: 40px !important;
+  }
+
+  .search-icon {
+    left: 15px;
+  }
+
+  .clear-search {
+    right: 15px;
+    padding: 4px 12px;
+    font-size: 0.8rem;
+  }
+
+  .game-description {
+    padding: 15px;
+  }
+}

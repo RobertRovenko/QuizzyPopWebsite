@@ -1,0 +1,298 @@
+/* src/components/Header.css */
+.header {
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background: #001220 !important; /* SOLID COLOR - no transparency */
+  backdrop-filter: none !important; /* Remove blur effect */
+  -webkit-backdrop-filter: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.header.scrolled {
+  background: #001220 !important; /* Same solid color when scrolled */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 10px 20px 10px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  gap: 15px;
+  backdrop-filter: blur(5px);
+}
+
+.logo:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.logo-mascot {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-mascot {
+  transform: scale(1.05);
+}
+
+.logo-text {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 2.8rem !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: "Fredoka", "Segoe UI", "Arial Black", sans-serif !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  justify-content: flex-end;
+  margin-left: 40px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+  padding: 8px 16px;
+  position: relative;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  font-family: "Fredoka", "Segoe UI", sans-serif;
+  border-radius: 8px;
+}
+
+.nav-links a:not(.download-btn):hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transform: translateY(-2px);
+}
+
+.nav-links a:not(.download-btn)::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #00cc8e;
+  transition: width 0.3s ease;
+  border-radius: 1px;
+}
+
+.nav-links a:not(.download-btn):hover::after {
+  width: 80%;
+}
+
+/* REVERTED: Download button - SOLID BLUE CTA */
+.download-btn {
+  background: linear-gradient(
+    135deg,
+    #00aaff,
+    #0088cc
+  ) !important; /* SOLID gradient */
+  color: white !important;
+  padding: 14px 32px !important; /* Slightly bigger */
+  border-radius: 50px;
+  font-weight: 700 !important;
+  margin-left: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important; /* White border */
+  transition: all 0.3s ease !important;
+  box-shadow: 0 6px 20px rgba(0, 136, 204, 0.4) !important; /* Stronger shadow */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  font-family: "Fredoka", "Segoe UI", sans-serif;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Glow effect on hover */
+.download-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #00bbff, #0099dd);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50px;
+}
+
+.download-btn:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 25px rgba(0, 136, 204, 0.6) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.download-btn:hover::before {
+  opacity: 1;
+}
+
+.download-btn::after {
+  display: none !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 0;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .logo-mascot {
+    width: 55px;
+    height: 55px;
+  }
+
+  .logo-text {
+    font-size: 2rem !important;
+  }
+
+  .logo {
+    padding: 6px 14px 6px 10px;
+    border-radius: 16px;
+  }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 85px;
+    left: 0;
+    right: 0;
+    background: #001220 !important; /* SOLID COLOR for mobile menu */
+    backdrop-filter: none !important; /* Remove blur */
+    -webkit-backdrop-filter: none !important;
+    flex-direction: column;
+    padding: 25px;
+    gap: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    margin-left: 0;
+    align-items: stretch;
+    justify-content: flex-start;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 16px 20px !important;
+    font-size: 1.3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    margin: 0 !important;
+    border-radius: 12px !important;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  /* REVERTED: Mobile download button - SOLID */
+  .download-btn {
+    margin-top: 10px;
+    order: 99;
+    background: linear-gradient(135deg, #00aaff, #0088cc) !important;
+    border-radius: 50px !important;
+    box-shadow: 0 6px 20px rgba(0, 136, 204, 0.4) !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #00bbff, #0099dd) !important;
+    box-shadow: 0 8px 25px rgba(0, 136, 204, 0.6) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 20px;
+  }
+
+  .logo-mascot {
+    width: 50px;
+    height: 50px;
+  }
+
+  .logo-text {
+    font-size: 1.8rem !important;
+  }
+
+  .logo {
+    padding: 5px 12px 5px 8px;
+    border-radius: 14px;
+  }
+
+  .nav-links {
+    top: 80px;
+    padding: 20px;
+  }
+}

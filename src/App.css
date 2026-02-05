@@ -1,0 +1,55 @@
+/* src/App.css - Update font-family */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    "Fredoka",
+    system-ui,
+    -apple-system,
+    sans-serif; /* Add Fredoka */
+}
+
+:root {
+  --primary: #00a784;
+  --primary-dark: #008577;
+  --secondary: #001220;
+  --accent: #ff9800;
+  --text: #ffffff;
+  --text-secondary: #b0bec5;
+  --card-bg: #1a2430;
+  --success: #00cc8e;
+  --error: #f44336;
+}
+
+body {
+  background-color: var(--secondary);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-family:
+    "Fredoka",
+    system-ui,
+    -apple-system,
+    sans-serif; /* Add here too */
+}
+
+/* Button fonts */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-weight: 600; /* Fredoka SemiBold */
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-family:
+    "Fredoka",
+    system-ui,
+    -apple-system,
+    sans-serif;
+}

@@ -1,0 +1,61 @@
+/* src/components/HaikeiBackground.css */
+.haikei-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.haikei-svg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  filter: blur(0.5px);
+}
+
+/* Desktop Optimizations */
+@media (min-width: 768px) {
+  .haikei-svg {
+    /* On desktop, compress the waves vertically */
+    transform: scaleY(0.7) translateY(-15%);
+    transform-origin: top center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .haikei-svg {
+    /* On large screens, further compress and blur for softer look */
+    transform: scaleY(0.6) translateY(-20%);
+    opacity: 0.5;
+    filter: blur(1px);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .haikei-svg {
+    /* On mobile, use original aspect ratio but scale to fit */
+    transform: scale(1.2) translateY(-10%);
+    transform-origin: top center;
+  }
+}
+
+/* Animation for subtle movement */
+@keyframes gentleFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.01);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .haikei-svg {
+    animation: gentleFloat 20s ease-in-out infinite;
+  }
+}
