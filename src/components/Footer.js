@@ -130,7 +130,7 @@ function Footer() {
           <div className="download-badges">
             {/* Google Play Badge */}
             <a
-              href="https://play.google.com"
+              href="https://play.google.com/apps/testing/com.rovenkodev.quizzypop"
               target="_blank"
               rel="noopener noreferrer"
               className="download-badge play-badge"

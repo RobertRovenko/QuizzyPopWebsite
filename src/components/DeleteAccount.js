@@ -68,15 +68,17 @@ function DeleteAccount() {
               <div className="email-contact">
                 <h4>Email for Account Deletion Requests:</h4>
                 <div className="email-display">dev@robertrovenko.com</div>
-                <p>Subject: "QuizzyPop Account Deletion Request"</p>
+                <p>Subject: "QuizzyPop Account/Data Deletion Request"</p>
               </div>
 
               <div className="email-requirements">
                 <h4>Include in your email:</h4>
                 <ul>
                   <li>Your QuizzyPop username</li>
-                  <li>Subject: "QuizzyPop Account Deletion Request"</li>
-                  <li>Confirmation you want all data deleted</li>
+                  <li>Subject: "QuizzyPop Account/Data Deletion Request"</li>
+                  <li>
+                    Confirmation you want all or some of your data deleted
+                  </li>
                 </ul>
               </div>
             </div>

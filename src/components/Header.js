@@ -35,7 +35,11 @@ function Header() {
           <Link to="/pricing">Pricing</Link>
 
           <Link to="/faq">FAQ</Link>
-          <a href="#download" onClick={closeMenu} className="download-btn">
+          <a
+            href="https://play.google.com/apps/testing/com.rovenkodev.quizzypop"
+            onClick={closeMenu}
+            className="download-btn"
+          >
             Download
           </a>
         </nav>
