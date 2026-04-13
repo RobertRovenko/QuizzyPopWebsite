@@ -93,7 +93,9 @@
 }
 
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 16px 36px;
   font-size: 1.1rem;
   font-weight: 600;
@@ -171,11 +173,66 @@
   opacity: 0.8;
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
+/* Large Tablet - Mockup still on side but content adjusted */
+@media (max-width: 1200px) {
+  .hero {
+    min-height: 90vh;
+  }
+
   .hero-mockup {
-    max-width: 35%;
-    right: 3%;
+    max-width: 30%;
+    right: 5%;
+  }
+
+  .hero-content {
+    max-width: 550px;
+    text-align: center;
+  }
+}
+
+/* Medium Tablet - START TRANSITIONING TO MOBILE LAYOUT */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 140px 0 80px;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-content {
+    order: 1;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .hero-mockup {
+    order: 2;
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    max-width: 50%;
+    width: auto;
+    height: auto;
+    max-height: 45vh;
+    margin: 60px auto 30px;
+    display: block;
+    opacity: 1;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+  }
+
+  .hero-buttons {
+    margin-bottom: 50px;
   }
 }
 

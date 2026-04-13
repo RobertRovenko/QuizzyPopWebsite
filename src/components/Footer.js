@@ -54,7 +54,7 @@ function Footer() {
               >
                 <FaGithub />
               </a>
-              <a href="mailto:contact@quizzypop.com" aria-label="Email">
+              <a href="mailto:rovenkodevsupport@gmail.com" aria-label="Email">
                 <FaEnvelope />
               </a>
             </div>
@@ -70,9 +70,7 @@ function Footer() {
               <li>
                 <a href="#how-to-play">How to Play</a>
               </li>
-              <li>
-                <a href="#leaderboard">Leaderboard</a>
-              </li>
+
               <li>
                 <a href="#pricing">Pricing</a>
               </li>
@@ -130,7 +128,7 @@ function Footer() {
           <div className="download-badges">
             {/* Google Play Badge */}
             <a
-              href="https://play.google.com/apps/testing/com.rovenkodev.quizzypop"
+              href="https://play.google.com/store/apps/details?id=com.rovenkodev.quizzypop"
               target="_blank"
               rel="noopener noreferrer"
               className="download-badge play-badge"
@@ -156,7 +154,7 @@ function Footer() {
           <p className="footer-dev-credit">
             Developed by{" "}
             <a
-              href="https://rovenkodev.com"
+              href="https://play.google.com/store/apps/dev?id=6638725637924776409&hl=en-US"
               target="_blank"
               rel="noopener noreferrer"
             >

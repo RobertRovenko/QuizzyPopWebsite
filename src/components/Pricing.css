@@ -3,7 +3,7 @@
   min-height: 100vh;
   background: #001220;
   color: #ffffff;
-  padding-top: 150px; /* Add this line - adjust based on your header height */
+  padding-top: 150px;
 }
 
 .pricing-header {
@@ -58,26 +58,18 @@
   font-size: 1rem;
 }
 
-/* Main Content */
+/* Main Content - Simplified without nested boxes */
 .pricing-container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 40px 30px 60px;
 }
 
-.pricing-content {
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 20px;
-  padding: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
 /* Sections */
 .pricing-section {
-  margin-bottom: 50px;
-  padding-bottom: 40px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 60px;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .pricing-section:last-of-type {
@@ -159,53 +151,149 @@
   line-height: 1.5;
 }
 
-/* Genre Card */
+/* Genre Card - Simplified */
 .genre-card {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+}
+
+/* QuizzyPass Section */
+.quizzypass-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.quizzypass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.quizzypass-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.quizzypass-card.premium-pass {
   background: linear-gradient(
     135deg,
-    rgba(0, 170, 255, 0.05),
-    rgba(0, 204, 142, 0.05)
+    rgba(255, 215, 0, 0.08),
+    rgba(0, 204, 142, 0.08)
   );
-  border-radius: 15px;
-  padding: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 215, 0, 0.3);
 }
 
-.genre-header {
+.quizzypass-card.premium-pass:hover {
+  border-color: rgba(255, 215, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.15);
+}
+
+.premium-badge-pass {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  background: linear-gradient(135deg, #ffd700, #ffaa00);
+  color: #001220;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pass-header {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.pass-header h3 {
+  font-size: 1.6rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.pass-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #00cc8e;
+}
+
+.quizzypass-card.premium-pass .pass-price {
+  color: #ffd700;
+}
+
+.pass-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.pass-rewards {
+  margin-bottom: 25px;
+}
+
+.reward-item {
   display: flex;
   align-items: center;
-  gap: 20px;
-  margin-bottom: 30px;
+  gap: 12px;
+  padding: 12px 0;
+  color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.genre-icon {
-  background: rgba(255, 255, 255, 0.1);
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+.reward-item:last-child {
+  border-bottom: none;
+}
+
+.reward-item.premium {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.reward-icon {
+  font-size: 1.4rem;
+  min-width: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
-  color: #00aaff;
+  color: #00cc8e;
 }
 
-.genre-info h3 {
-  font-size: 1.5rem;
-  margin-bottom: 5px;
-  color: #ffffff;
-}
-
-.genre-price {
-  font-size: 1.3rem;
-  font-weight: 600;
+.reward-item.premium .reward-icon {
   color: #ffd700;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+}
+
+.pass-note {
+  background: rgba(0, 204, 142, 0.1);
+  border-left: 4px solid #00cc8e;
+  padding: 12px 15px;
+  border-radius: 0 8px 8px 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+.pass-note.premium-note {
+  background: rgba(255, 215, 0, 0.1);
+  border-left-color: #ffd700;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.genre-header {
+  display: none;
 }
 
 .genre-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
   margin-bottom: 25px;
 }
 
@@ -213,11 +301,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 15px;
+  padding: 15px 20px;
   background: rgba(255, 255, 255, 0.03);
-  border-radius: 10px;
-  margin-bottom: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.genre-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 204, 142, 0.3);
+}
+
+.genre-item.free-genre {
+  background: rgba(0, 204, 142, 0.05);
+  border-color: rgba(0, 204, 142, 0.2);
+}
+
+.genre-item.free-genre:hover {
+  background: rgba(0, 204, 142, 0.1);
+  border-color: rgba(0, 204, 142, 0.4);
 }
 
 .genre-name {
@@ -228,6 +331,10 @@
 .genre-cost {
   color: #ffd700;
   font-weight: 600;
+}
+
+.genre-item.free-genre .genre-cost {
+  color: #00cc8e;
 }
 
 .genre-note {
@@ -306,7 +413,7 @@
 }
 
 .gem-price {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: #ffffff;
 }
@@ -349,18 +456,15 @@
 
 /* Free Section */
 .free-section {
-  margin-top: 50px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .free-card {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 170, 255, 0.1),
-    rgba(0, 204, 142, 0.1)
-  );
-  border-radius: 20px;
-  padding: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  border: none;
   text-align: center;
 }
 
@@ -427,90 +531,17 @@
   margin-top: 20px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .pricing-header {
-    padding: 30px 0 15px;
-  }
-
-  .pricing-header h1 {
-    font-size: 2rem;
-  }
-
-  .pricing-container {
-    padding: 30px 20px 40px;
-  }
-
-  .pricing-content {
-    padding: 25px 20px;
-  }
-
-  .powerups-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gem-packs-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .free-methods {
-    grid-template-columns: 1fr;
-  }
-
-  .section-title {
-    font-size: 1.5rem;
-  }
-
-  .genre-header {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
-  }
-
-  .genre-item {
-    flex-direction: column;
-    gap: 5px;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .pricing-header h1 {
-    font-size: 1.8rem;
-  }
-
-  .pricing-subtitle {
-    font-size: 1rem;
-  }
-
-  .gem-count {
-    font-size: 1.7rem;
-  }
-
-  .gem-price {
-    font-size: 1.3rem;
-  }
-
-  .free-card {
-    padding: 25px 20px;
-  }
-
-  .free-card h2 {
-    font-size: 1.5rem;
-  }
-}
-
-/* Refund Policy Section */
+/* Policy Section */
 .policy-section {
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 .policy-card {
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 20px;
-  padding: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 4px solid #ff6b6b;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+  border-left: none;
 }
 
 .policy-card h2 {
@@ -577,10 +608,58 @@
   color: #ff6b6b;
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 768px) {
+  .pricing-page {
+    padding-top: 120px;
+  }
+
+  .pricing-header {
+    padding: 30px 0 15px;
+  }
+
+  .pricing-header h1 {
+    font-size: 2rem;
+  }
+
+  .pricing-container {
+    padding: 30px 20px 40px;
+  }
+
+  .powerups-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gem-packs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .free-methods {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .genre-list {
+    grid-template-columns: 1fr;
+  }
+
   .policy-points {
     grid-template-columns: 1fr;
+  }
+
+  .quizzypass-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .free-card {
+    padding: 25px 20px;
+  }
+
+  .free-card h2 {
+    font-size: 1.5rem;
   }
 
   .policy-card {
@@ -589,5 +668,95 @@
 
   .policy-card h2 {
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-page {
+    padding-top: 100px;
+  }
+
+  .pricing-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .pricing-subtitle {
+    font-size: 1rem;
+  }
+
+  .pricing-container {
+    padding: 20px 15px 30px;
+  }
+
+  .gem-count {
+    font-size: 1.7rem;
+  }
+
+  .gem-price {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .powerup-card {
+    padding: 20px 15px;
+  }
+
+  .powerup-icon {
+    font-size: 2rem;
+  }
+
+  .powerup-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .powerup-price {
+    font-size: 1.2rem;
+  }
+
+  .free-card {
+    padding: 20px 15px;
+  }
+
+  .free-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .free-methods {
+    gap: 15px;
+  }
+
+  .free-method {
+    padding: 15px;
+  }
+
+  .free-method h4 {
+    font-size: 1rem;
+  }
+
+  .genre-list {
+    grid-template-columns: 1fr;
+  }
+
+  .policy-card {
+    padding: 15px;
+  }
+
+  .policy-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .policy-point {
+    padding: 15px;
+  }
+
+  .policy-info h4 {
+    font-size: 1rem;
+  }
+
+  .policy-info p {
+    font-size: 0.9rem;
   }
 }

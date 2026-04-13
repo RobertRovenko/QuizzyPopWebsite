@@ -3,19 +3,16 @@ import React from "react";
 import SVGBackground from "./SVGBackground";
 import "./Hero.css";
 import signupMockup from "../assets/images/signupmockup.png";
-
 function Hero() {
   return (
     <section className="hero" id="home">
       <SVGBackground />
-
       {/* Single mockup image - CSS handles positioning */}
       <img
         src={signupMockup}
         alt="Quiz App Signup Mockup"
         className="hero-mockup"
       />
-
       <div className="container hero-content">
         <h1 className="hero-title">
           Test Your Knowledge.
@@ -27,7 +24,12 @@ function Hero() {
           quizzes!
         </p>
         <div className="hero-buttons">
-          <a href="#download" className="btn btn-primary">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.rovenkodev.quizzypop"
+            className="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Get on Google Play
           </a>
           <a href="#features" className="btn btn-secondary">
@@ -36,11 +38,11 @@ function Hero() {
         </div>
         <div className="hero-stats">
           <div className="stat">
-            <div className="stat-number">10+</div>
+            <div className="stat-number">15+</div>
             <div className="stat-label">Quiz Categories</div>
           </div>
           <div className="stat">
-            <div className="stat-number">999+</div>
+            <div className="stat-number">1500+</div>
             <div className="stat-label">Questions</div>
           </div>
           <div className="stat">
@@ -56,5 +58,4 @@ function Hero() {
     </section>
   );
 }
-
 export default Hero;
