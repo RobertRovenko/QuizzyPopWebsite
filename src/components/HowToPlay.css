@@ -1,0 +1,819 @@
+/* src/components/HowToPlay.css */
+.how-to-play-page {
+  min-height: 100vh;
+  background: #001220;
+  color: #ffffff;
+  padding-top: 150px;
+}
+
+/* Header */
+.htp-header {
+  padding: 40px 0 20px;
+}
+
+.htp-header-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 30px;
+  text-align: center;
+}
+
+.htp-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #ffffff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: "Fredoka", "Segoe UI", sans-serif;
+}
+
+.htp-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+}
+
+/* Main Container */
+.htp-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 30px;
+}
+
+/* Sections */
+.htp-container section {
+  margin-bottom: 80px;
+}
+
+.htp-container h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.section-description {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+/* Game Modes Section */
+.modes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.mode-button {
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.mode-button:hover {
+  border-color: var(--mode-color);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-3px);
+  color: #ffffff;
+}
+
+.mode-button.active {
+  background: var(--mode-color);
+  border-color: var(--mode-color);
+  color: #ffffff;
+}
+
+.mode-button-icon {
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+
+.mode-button.active .mode-button-icon {
+  color: #ffffff;
+}
+
+.mode-button-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: inherit;
+}
+
+/* Mode Details */
+.mode-details {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mode-header {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.mode-icon-large {
+  font-size: 3.5rem;
+  min-width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mode-header h3 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.mode-header p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+}
+
+.mode-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.mode-features h4,
+.mode-mechanics h4,
+.mode-tips h4 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.mode-feature {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mode-feature h5 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.mode-feature p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.mechanics-list {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.mechanic-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mechanic-item:last-child {
+  border-bottom: none;
+}
+
+.mechanic-label {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: capitalize;
+}
+
+.mechanic-value {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tips-list {
+  list-style: none;
+  padding: 0;
+}
+
+.tips-list li {
+  padding: 10px 0;
+  padding-left: 25px;
+  position: relative;
+  color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tips-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #00cc8e;
+  font-weight: bold;
+}
+
+.tips-list li:last-child {
+  border-bottom: none;
+}
+
+/* Buttons Section */
+.buttons-section {
+  margin-bottom: 80px;
+}
+
+.buttons-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.button-showcase {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+}
+
+.button-visual {
+  margin-bottom: 25px;
+}
+
+.showcase-button {
+  padding: 18px 50px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Fredoka", "Segoe UI", sans-serif;
+  min-width: 150px;
+}
+
+.showcase-button.true {
+  background: #00cc8e;
+  color: #ffffff;
+}
+
+.showcase-button.true:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 204, 142, 0.3);
+}
+
+.showcase-button.false {
+  background: #ff6b6b;
+  color: #ffffff;
+}
+
+.showcase-button.false:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+}
+
+.button-info h4 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.button-info p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Button Example */
+.button-example {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+}
+
+.button-example h4 {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+}
+
+.example-flow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.flow-step {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.flow-number {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #00aaff, #00cc8e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.flow-text {
+  text-align: center;
+  flex: 1;
+}
+
+.statement {
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.timer {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.reward {
+  color: #00cc8e;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.small-text {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.flow-arrow {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+/* Gameplay Flow Section */
+.gameplay-flow-section {
+}
+
+.gameplay-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.gameplay-step {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.gameplay-step:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(0, 204, 142, 0.3);
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #00aaff, #00cc8e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content h4 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.step-content p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 12px;
+}
+
+.step-highlight {
+  background: rgba(0, 204, 142, 0.1);
+  border-left: 4px solid #00cc8e;
+  padding: 12px 15px;
+  border-radius: 0 8px 8px 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+.step-arrow {
+  color: rgba(0, 204, 142, 0.5);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+/* Game Rules Section */
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.rule-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.rule-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 204, 142, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 204, 142, 0.1);
+}
+
+.rule-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.rule-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.rule-card p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+/* Comparison Table */
+.comparison-table {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 170, 255, 0.1),
+    rgba(0, 204, 142, 0.1)
+  );
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-cell {
+  padding: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+.table-header .table-cell {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.table-cell.bold {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* CTA Section */
+.htp-cta {
+  background: linear-gradient(135deg, #00aaff 0%, #00cc8e 100%);
+  border-radius: 20px;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.htp-cta h2 {
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.htp-cta > p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.cta-button.primary {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-button.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.cta-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .how-to-play-page {
+    padding-top: 120px;
+  }
+
+  .htp-header h1 {
+    font-size: 2rem;
+  }
+
+  .htp-container {
+    padding: 40px 20px;
+  }
+
+  .htp-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .modes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+
+  .mode-details {
+    padding: 25px;
+  }
+
+  .mode-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .mode-content {
+    grid-template-columns: 1fr;
+  }
+
+  .button-showcase {
+    padding: 20px;
+  }
+
+  .example-flow {
+    gap: 10px;
+  }
+
+  .flow-step {
+    min-width: 160px;
+    padding: 15px;
+  }
+
+  .gameplay-step {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .table-cell {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .htp-cta {
+    padding: 40px 20px;
+  }
+
+  .htp-cta h2 {
+    font-size: 1.8rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-to-play-page {
+    padding-top: 100px;
+  }
+
+  .htp-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .htp-container {
+    padding: 30px 15px;
+  }
+
+  .htp-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .modes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mode-details {
+    padding: 20px;
+  }
+
+  .mode-header {
+    padding-bottom: 20px;
+  }
+
+  .mode-icon-large {
+    font-size: 2.5rem;
+    min-width: auto;
+  }
+
+  .mode-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .showcase-button {
+    min-width: 120px;
+    padding: 14px 30px;
+    font-size: 1.1rem;
+  }
+
+  .button-example {
+    padding: 20px;
+  }
+
+  .example-flow {
+    gap: 8px;
+  }
+
+  .flow-step {
+    min-width: 130px;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .flow-number {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+
+  .flow-arrow {
+    font-size: 1.2rem;
+  }
+
+  .gameplay-step {
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .step-content h4 {
+    font-size: 1.1rem;
+  }
+
+  .rules-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr;
+  }
+
+  .table-cell {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  .htp-cta {
+    padding: 30px 15px;
+  }
+
+  .htp-cta h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-button {
+    padding: 14px 25px;
+    font-size: 1rem;
+  }
+}

@@ -65,17 +65,17 @@ function Footer() {
             <h3 className="footer-heading">Quick Links</h3>
             <ul>
               <li>
-                <a href="#features">Features</a>
+                <Link to="/features">Features</Link>
               </li>
               <li>
-                <a href="#how-to-play">How to Play</a>
+                <Link to="/howtoplay">How to Play</Link>
               </li>
 
               <li>
-                <a href="#pricing">Pricing</a>
+                <Link to="/pricing">Pricing</Link>
               </li>
               <li>
-                <a href="#faq">FAQ</a>
+                <Link to="/faq">FAQ</Link>
               </li>
             </ul>
           </div>
@@ -85,25 +85,23 @@ function Footer() {
             <h3 className="footer-heading">Legal</h3>
             <ul>
               <li>
-                <a href="/privacy">
+                <Link to="/privacy">
                   <FaShieldAlt /> Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/terms">
+                <Link to="/terms">
                   <FaFileContract /> Terms of Service
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/faq">
+                <Link to="/faq">
                   <FaQuestionCircle /> FAQ
-                </a>
+                </Link>
               </li>
+
               <li>
-                <a href="/contact">Contact Us</a>
-              </li>
-              <li>
-                <a href="/delete-account">Delete Account</a>
+                <Link to="/delete-account">Delete Account</Link>
               </li>
             </ul>
           </div>
@@ -171,11 +169,11 @@ function Footer() {
           <div className="footer-bottom-links">
             <Link to="/privacy">Privacy Policy</Link>
             <span className="separator">•</span>
-            <a href="/terms">Terms of Service</a>
+            <Link to="/terms">Terms of Service</Link>
             <span className="separator">•</span>
             <Link to="/attributions">Attributions</Link>
             <span className="separator">•</span>
-            <a href="/cookies">Cookie Policy</a>
+            <Link to="/cookies">Cookie Policy</Link>
           </div>
         </div>
       </div>

@@ -11,13 +11,14 @@ import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import "./App.css";
-import Attributions from "./components/Attributions"; // Add this
+import Attributions from "./components/Attributions";
 import TermsOfService from "./components/TermsOfService";
 import CookiePolicy from "./components/CookiePolicy";
 import FAQ from "./components/FAQ";
 import Pricing from "./components/Pricing";
 import DeleteAccount from "./components/DeleteAccount";
-
+import Features from "./components/Features";
+import HowToPlay from "./components/HowToPlay";
 function App() {
   return (
     <Router>
@@ -44,6 +45,7 @@ function App() {
               </>
             }
           />
+
           <Route
             path="/attributions"
             element={
@@ -70,6 +72,26 @@ function App() {
               <>
                 <Header />
                 <CookiePolicy />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/features"
+            element={
+              <>
+                <Header />
+                <Features />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/howtoplay"
+            element={
+              <>
+                <Header />
+                <HowToPlay />
                 <Footer />
               </>
             }
