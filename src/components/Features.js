@@ -17,6 +17,7 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 function Features() {
   const [activeTab, setActiveTab] = useState("gameplay");
 
@@ -373,9 +374,9 @@ function Features() {
             >
               Download Now <FaChevronRight />
             </a>
-            <a href="/pricing" className="cta-button secondary">
+            <Link to="/pricing" className="cta-button secondary">
               View Pricing
-            </a>
+            </Link>
           </div>
         </section>
       </main>

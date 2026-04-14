@@ -11,7 +11,7 @@ import {
   FaTrophy,
   FaChevronRight,
 } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 function HowToPlay() {
   const [activeMode, setActiveMode] = useState("daily");
 
@@ -500,9 +500,9 @@ function HowToPlay() {
             >
               Download Now <FaChevronRight />
             </a>
-            <a href="#features" className="cta-button secondary">
+            <Link to="/features" className="cta-button secondary">
               Learn More Features
-            </a>
+            </Link>
           </div>
         </section>
       </main>

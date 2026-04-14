@@ -19,6 +19,7 @@ import Pricing from "./components/Pricing";
 import DeleteAccount from "./components/DeleteAccount";
 import Features from "./components/Features";
 import HowToPlay from "./components/HowToPlay";
+import Carousel from "./components/Carousel";
 function App() {
   return (
     <Router>
@@ -31,6 +32,7 @@ function App() {
               <>
                 <Header />
                 <Hero />
+                <Carousel />
                 <Footer />
               </>
             }

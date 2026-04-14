@@ -1,13 +1,12 @@
 // src/components/Hero.js
 import React from "react";
-import SVGBackground from "./SVGBackground";
+
 import "./Hero.css";
 import signupMockup from "../assets/images/signupmockup.png";
+import { Link } from "react-router-dom";
 function Hero() {
   return (
     <section className="hero" id="home">
-      <SVGBackground />
-      {/* Single mockup image - CSS handles positioning */}
       <img
         src={signupMockup}
         alt="Quiz App Signup Mockup"
@@ -32,9 +31,9 @@ function Hero() {
           >
             Get on Google Play
           </a>
-          <a href="#features" className="btn btn-secondary">
+          <Link to="/features" className="btn btn-secondary">
             Learn More
-          </a>
+          </Link>
         </div>
         <div className="hero-stats">
           <div className="stat">
