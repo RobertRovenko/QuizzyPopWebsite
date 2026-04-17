@@ -15,13 +15,18 @@ import demo8 from "../assets/images/demo8.png";
 
 const demoImages = [demo1, demo2, demo3, demo4, demo5, demo6, demo7, demo8];
 
+// Create a large array by cycling through demoImages with modulo
+const CAROUSEL_SIZE = 100; // Number of items to render (enough for infinite feel)
+const infiniteImages = Array.from(
+  { length: CAROUSEL_SIZE },
+  (_, i) => demoImages[i % demoImages.length],
+);
+
 function Carousel() {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [isAutoPlay, setIsAutoPlay] = useState(true);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollLeft, setCanScrollLeft] = useState(true);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const trackRef = useRef(null);
-  const autoPlayRef = useRef(null);
 
   // Check scroll position
   const checkScroll = () => {
@@ -33,28 +38,14 @@ function Carousel() {
     setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
   };
 
-  // Auto-scroll carousel
+  // Set up scroll event listener
   useEffect(() => {
-    if (!isAutoPlay) return;
+    const track = trackRef.current;
+    if (!track) return;
 
-    const autoScroll = () => {
-      if (!trackRef.current) return;
-
-      const { scrollLeft, scrollWidth, clientWidth } = trackRef.current;
-      const maxScroll = scrollWidth - clientWidth;
-
-      if (scrollLeft >= maxScroll) {
-        // Reset to beginning
-        trackRef.current.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        // Scroll to next item (approximately 280px per item on desktop)
-        trackRef.current.scrollBy({ left: 300, behavior: "smooth" });
-      }
-    };
-
-    autoPlayRef.current = setInterval(autoScroll, 5000);
-    return () => clearInterval(autoPlayRef.current);
-  }, [isAutoPlay]);
+    track.addEventListener("scroll", handleTrackScroll);
+    return () => track.removeEventListener("scroll", handleTrackScroll);
+  }, []);
 
   const scroll = (direction) => {
     if (!trackRef.current) return;
@@ -69,22 +60,10 @@ function Carousel() {
       left: newPosition,
       behavior: "smooth",
     });
-
-    setIsAutoPlay(false);
-    // Resume autoplay after 8 seconds of user interaction
-    setTimeout(() => setIsAutoPlay(true), 8000);
   };
 
   const handleTrackScroll = () => {
     checkScroll();
-  };
-
-  const handleMouseEnter = () => {
-    setIsAutoPlay(false);
-  };
-
-  const handleMouseLeave = () => {
-    setIsAutoPlay(true);
   };
 
   return (
@@ -127,14 +106,12 @@ function Carousel() {
             className="carousel-track"
             ref={trackRef}
             onScroll={handleTrackScroll}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
           >
-            {demoImages.map((image, index) => (
+            {infiniteImages.map((image, index) => (
               <div key={index} className="carousel-item">
                 <img
                   src={image}
-                  alt={`App Screenshot ${index + 1}`}
+                  alt={`App Screenshot ${(index % demoImages.length) + 1}`}
                   className="carousel-image"
                 />
               </div>
